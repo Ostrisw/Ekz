@@ -31,7 +31,15 @@ namespace Magazine
             lblPrice.Visible = false;
             lblNumber.Visible = false;
 
+            txtBoxFilePath.Visible = false;
+            lblFilePath.Visible = false;
+            btnFilePath.Visible = false;
+
                 
+        }
+        private void FillData()
+        {
+            dataGridView1.DataSource = WorkWithFile.ReadTable();
         }
 
         private void btn_podtverdit_massiv_Click(object sender, EventArgs e)
@@ -52,21 +60,36 @@ namespace Magazine
             lblIzdatel.Visible = true;
             lblPrice.Visible = true;
             lblNumber.Visible = true;
+
+            txtBoxFilePath.Visible = true;
+            lblFilePath.Visible = true;
+            btnFilePath.Visible = true;
             //Прячутся ненужные
             lblRazm.Visible = false;
             numUpDownMass.Visible = false;
             btn_podtverdit_massiv.Visible = false;
+
         }
 
         private void btn_send_Click(object sender, EventArgs e)
         {
-            
+            if (txtBoxName.Text != "" && txtBoxIzdatel.Text != "" && txtBoxPrice.Text != "" && txtBoxNumber.Text != "")
+            {
+                Magazine cll = new Magazine();
+                cll.Name = txtBoxName.Text;
+                cll.Izdatel = txtBoxIzdatel.Text;
+                cll.Price = txtBoxPrice.Text;
+                cll.Number = txtBoxNumber.Text;
+
+                cll.Save();
+            }
+            else { MessageBox.Show("Все поля обязательны к заполнению!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+
         }
 
         private void btnFilePath_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "Text Files(.txt)|.txt| All files(.)|.";
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -81,6 +104,10 @@ namespace Magazine
                     MessageBox.Show("Формат не соответсвует требуемому.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
         }
     }
 }

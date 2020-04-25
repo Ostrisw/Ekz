@@ -8,6 +8,7 @@ namespace Magazine
 {
     class Magazine
     {
+        public int id;
         public string Name;
         public string Izdatel;
         public string Price;
@@ -26,6 +27,10 @@ namespace Magazine
             Izdatel = ss[2];
             Price = ss[3];
             Number = ss[4];
+        }
+        public void Save()
+        {
+            WorkWithFile.AddUpdate(id, Name, Izdatel, Price, Number);
         }
     }
 }
