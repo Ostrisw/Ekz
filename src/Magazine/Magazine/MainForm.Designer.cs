@@ -44,7 +44,6 @@
             this.txtBoxFilePath = new System.Windows.Forms.TextBox();
             this.btnFilePath = new System.Windows.Forms.Button();
             this.lblFilePath = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numUpDownMass)).BeginInit();
             this.SuspendLayout();
@@ -183,22 +182,11 @@
             this.lblFilePath.TabIndex = 19;
             this.lblFilePath.Text = "Путь к файлу";
             // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(549, 113);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 20;
-            this.btnSave.Text = "Сохранить";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(693, 346);
-            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.lblFilePath);
             this.Controls.Add(this.btnFilePath);
             this.Controls.Add(this.txtBoxFilePath);
@@ -242,7 +230,6 @@
         private System.Windows.Forms.TextBox txtBoxFilePath;
         private System.Windows.Forms.Button btnFilePath;
         private System.Windows.Forms.Label lblFilePath;
-        private System.Windows.Forms.Button btnSave;
     }
 }
 

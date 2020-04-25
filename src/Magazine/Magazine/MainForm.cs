@@ -80,8 +80,8 @@ namespace Magazine
                 cll.Izdatel = txtBoxIzdatel.Text;
                 cll.Price = txtBoxPrice.Text;
                 cll.Number = txtBoxNumber.Text;
-
                 cll.Save();
+                FillData();
             }
             else { MessageBox.Show("Все поля обязательны к заполнению!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error); }
 
@@ -104,10 +104,6 @@ namespace Magazine
                     MessageBox.Show("Формат не соответсвует требуемому.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
         }
     }
 }
